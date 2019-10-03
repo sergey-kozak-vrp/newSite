@@ -27,7 +27,7 @@ app.get("/callback", function (req, res) {
 
 
     var code = req.param('code');
-
+/*
     var oauth2 = new sf.OAuth2({
         // you can change loginUrl to connect to sandbox or prerelease env.
         loginUrl : 'https://login.salesforce.com',
