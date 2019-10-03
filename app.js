@@ -60,6 +60,7 @@ app.get("/callback", function (req, res) {
         console.log(conn.instanceUrl);
         console.log("User ID: " + userInfo.id);
         console.log("Org ID: " + userInfo.organizationId);
+        res.render('post.ejs', { post: "You connection SUCCESS" } );
         // ...
     });
 
