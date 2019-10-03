@@ -16,10 +16,22 @@ var posts = [
     {title : "My First post 3", content: "333333333dawdawdawdawd"}
 ];
 
+var oauth2 = new sf.OAuth2({
+    // you can change loginUrl to connect to sandbox or prerelease env.
+    loginUrl : 'https://login.salesforce.com',
+    clientId : '3MVG9G9pzCUSkzZtjYVaRpHLTcvjkathl2nrl06zSaA5h6iTagnQJ0ktvCO5gpluAXPC84xas_K.zEHW_oynd',
+    clientSecret : 'F31069EADF519941FEC58E9FDE88FA51D768492FF1A3034C63339D7FB3F3FACE',
+    redirectUri : 'https://newsite1.herokuapp.com/callback2'
+});
+var conn = new sf.Connection({ oauth2 : oauth2 });
+
 app.get('/', function (req, res) {
     res.render('index.ejs', { posts: posts } );
 });
 
+app.get('/oauth2/auth', function (req, res) {
+    res.redirect(oauth2.getAuthorizationUrl({ scope : 'api id web' }));
+});
 app.get("/callback", function (req, res) {
     console.log('my CODE = ' + req.param('code'));
     var codeUrl = req.query;
@@ -34,7 +46,7 @@ app.get("/callback", function (req, res) {
         clientId : '3MVG9G9pzCUSkzZtjYVaRpHLTcvjkathl2nrl06zSaA5h6iTagnQJ0ktvCO5gpluAXPC84xas_K.zEHW_oynd',
         clientSecret : 'F31069EADF519941FEC58E9FDE88FA51D768492FF1A3034C63339D7FB3F3FACE',
         redirectUri : 'https://newsite1.herokuapp.com/callback2'
-    });
+    }); */
     var conn = new sf.Connection({ oauth2 : oauth2 });
 
     conn.authorize(code, function(err, userInfo) {
