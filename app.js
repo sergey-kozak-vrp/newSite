@@ -30,10 +30,10 @@ app.get("/callback", function (req, res) {
 
     var oauth2 = new sf.OAuth2({
         // you can change loginUrl to connect to sandbox or prerelease env.
-        // loginUrl : 'https://test.salesforce.com',
+        loginUrl : 'https://login.salesforce.com',
         clientId : '3MVG9G9pzCUSkzZtjYVaRpHLTcvjkathl2nrl06zSaA5h6iTagnQJ0ktvCO5gpluAXPC84xas_K.zEHW_oynd',
         clientSecret : 'F31069EADF519941FEC58E9FDE88FA51D768492FF1A3034C63339D7FB3F3FACE',
-        redirectUri : '/callback2'
+        redirectUri : 'https://newsite1.herokuapp.com/callback'
     });
 
     conn.authorize(code, function(err, userInfo) {
