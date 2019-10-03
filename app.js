@@ -31,7 +31,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/oauth2/auth', function (req, res) {
-    console.log(oauth2.getAuthorizationUrl({ scope : 'api id web' }));
+    console.log(oauth2.getAuthorizationUrl());
     res.redirect(oauth2.getAuthorizationUrl({ scope : 'api id web' }));
 });
 app.get("/callback", function (req, res) {
