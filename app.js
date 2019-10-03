@@ -21,8 +21,9 @@ var oauth2 = new sf.OAuth2({
     loginUrl : 'https://login.salesforce.com',
     clientId : '3MVG9G9pzCUSkzZtjYVaRpHLTcvjkathl2nrl06zSaA5h6iTagnQJ0ktvCO5gpluAXPC84xas_K.zEHW_oynd',
     clientSecret : 'F31069EADF519941FEC58E9FDE88FA51D768492FF1A3034C63339D7FB3F3FACE',
-    redirectUri : 'https://newsite1.herokuapp.com/callback2'
+    redirectUri : 'https://newsite1.herokuapp.com/callback'
 });
+
 var conn = new sf.Connection({ oauth2 : oauth2 });
 
 app.get('/', function (req, res) {
