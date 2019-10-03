@@ -77,7 +77,7 @@ app.get("/callback", function (req, res) {
             console.log('Error = ' + error);
             console.log('response = ' + response);
 
-            res.render('post.ejs', {post: "You connection SUCCESS " + response});
+            res.render('post.ejs', {post: "You connection SUCCESS " + body});
         });
 
 
