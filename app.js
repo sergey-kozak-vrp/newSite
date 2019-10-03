@@ -25,7 +25,7 @@ app.get("/callback", function (req, res) {
     var codeUrl = req.query;
     console.log('query = ' + codeUrl.code);
 
-    var conn = new sf.Connection({ oauth2 : oauth2 });
+
     var code = req.param('code');
 
     var oauth2 = new sf.OAuth2({
@@ -35,6 +35,7 @@ app.get("/callback", function (req, res) {
         clientSecret : 'F31069EADF519941FEC58E9FDE88FA51D768492FF1A3034C63339D7FB3F3FACE',
         redirectUri : 'https://newsite1.herokuapp.com/callback'
     });
+    var conn = new sf.Connection({ oauth2 : oauth2 });
 
     conn.authorize(code, function(err, userInfo) {
         if (err) { return console.error(err); }
