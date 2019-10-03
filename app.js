@@ -68,7 +68,7 @@ app.get("/callback", function (req, res) {
 
         request.get({
             headers: {
-                'content-type': 'application/json'
+                'content-type': 'application/json',
                 'Authorization': auhorization
             },
             url: getUrl
