@@ -8,6 +8,7 @@ var sf = require('node-salesforce');
 
 app.use(bodyParcer.urlencoded({extended: true}));
 app.use(bodyParcer.json());
+app.use(express.static(__dirname + '/views'));
 
 var posts = [
     {title: "My First post 1", content: "1wdaedawdawdawdawd"},
@@ -26,7 +27,7 @@ var oauth2 = new sf.OAuth2({
 var conn = new sf.Connection({oauth2: oauth2});
 
 app.get('/', function (req, res) {
-    res.render('index.ejs', {posts: posts});
+    res.render('index.ejs');
 });
 
 app.get('/oauth2/auth', function (req, res) {
@@ -77,7 +78,7 @@ app.get("/callback", function (req, res) {
             console.log('Error = ' + error);
             console.log('response = ' + response);
 
-            res.render('post.ejs', {post: "You connection SUCCESS " + body});
+            res.render('post.ejs', {post: "You connection SUCCESS BUT User has not License for App. If you will get licence you will see this image:"});
         });
 
 
