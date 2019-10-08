@@ -65,7 +65,7 @@ app.get("/callback", function (req, res) {
 
         var accessToken = conn.accessToken;
         var auhorization = 'Bearer ' + accessToken;
-        var getUrl = conn.instanceUrl + '/services/apexrest/checkUserAccess';
+        var getUrl = conn.instanceUrl + '/services/apexrest/checkUserAccess/' + '?userId='+userInfo.id;
 
         request.get({
             headers: {
