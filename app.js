@@ -78,7 +78,7 @@ app.get("/callback", function (req, res) {
             console.log('Error = ' + error);
             console.log('response = ' + response);
 
-            res.render('post.ejs', {post: "You connection SUCCESS BUT User has not License for App. If you will get licence you will see this image:"});
+            res.render('post.ejs', {post: "You connection SUCCESS. License msg = :" + body});
         });
 
 
