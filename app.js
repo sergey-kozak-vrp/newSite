@@ -78,7 +78,11 @@ app.get("/callback", function (req, res) {
             console.log('Error = ' + error);
             console.log('response = ' + response);
 
-            res.render('post.ejs', {post: "You connection SUCCESS. License msg = :" + body});
+
+
+            var jsonString = JSON.parse(body);
+            var status = jsonString.access_status;
+            res.render('post.ejs', {post: "You connection SUCCESS. License msg =   " + status});
         });
 
 
