@@ -84,7 +84,7 @@ app.get("/callback", function (req, res) {
             var status = jsonString.access_status;
 
             if (status === 'ALLOWED') {
-                res.render('post.ejs', {post: "You connection SUCCESS. License msg =   " + status});
+                res.render('post.ejs', {post: ""});
             } else {
                 res.render('write.ejs');
             }
