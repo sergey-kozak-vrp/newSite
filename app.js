@@ -18,7 +18,7 @@ var posts = [
 
 var oauth2 = new sf.OAuth2({
     // you can change loginUrl to connect to sandbox or prerelease env.
-    loginUrl: 'https://login.salesforce.com',
+    loginUrl: 'https://mym-customer.my.salesforce.com',
     clientId: '3MVG9G9pzCUSkzZtjYVaRpHLTcvjkathl2nrl06zSaA5h6iTagnQJ0ktvCO5gpluAXPC84xas_K.zEHW_oynd',
     clientSecret: 'F31069EADF519941FEC58E9FDE88FA51D768492FF1A3034C63339D7FB3F3FACE',
     redirectUri: 'https://newsite1.herokuapp.com/callback'
@@ -84,7 +84,7 @@ app.get("/callback", function (req, res) {
             var status = jsonString.access_status;
 
             if (status === 'ALLOWED') {
-                res.render('post.ejs', {post: ""});
+                res.render('post.ejs', {post: "You logged in successfully. License check pass, you can use application."});
             } else {
                 res.render('write.ejs');
             }
