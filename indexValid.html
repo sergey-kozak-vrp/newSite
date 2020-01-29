@@ -1,0 +1,244 @@
+﻿<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="ru" class="lt-ie9 lt-ie8 lt-ie7"><![endif]-->
+<!--[if IE 7]><html lang="ru" class="lt-ie9 lt-ie8"><![endif]-->
+<!--[if IE 8]><html lang="ru" class="lt-ie9"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="ru">
+<!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<title>Order an ambulance</title>
+	<meta name="description" content="Course Project" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="shortcut icon" href="favicon.png" />
+	<link rel="stylesheet" href="libs/bootstrap/bootstrap-grid-3.3.1.min.css" />
+	<link rel="stylesheet" href="libs/font-awesome-4.2.0/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="libs/fancybox/jquery.fancybox.css" />
+	<link rel="stylesheet" href="libs/owl-carousel/owl.carousel.css" />
+	<link rel="stylesheet" href="libs/countdown/jquery.countdown.css" />
+	<link rel="stylesheet" href="css/fonts.css" />
+	<link rel="stylesheet" href="css/main.css" />
+	<link rel="stylesheet" href="css/media.css" />
+	<link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <link rel="stylesheet" href="http://ajax.aspnetcdn.com/ajax/jquery.ui/1.10.3/themes/sunny/jquery-ui.css">
+  
+    
+     
+     <script src="event_reverse_geocode.js" type="text/javascript"></script>
+	
+    <script type="text/javascript" src="js/jquery.appear.js"></script>
+</head>
+<body>
+
+
+	<header class="top_header">
+	<br><br>
+		<div class="header_topline ">
+		
+			<div class="container">
+				<div class="col-md-12">
+					<div class="row">
+						<div class="top_links">
+				        <img id="symb" src="img/taxisymb.svg" alt="">
+				        <div class="taxi">Order an ambulance</div>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section class="order">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="sell_descr">Order an ambulance</div>
+				</div>
+				
+			</div>
+			<br>
+			<div class="row">
+              
+               <div id="modal_form"><!-- Сaмo oкнo --> 
+                      <span id="modal_close">Х</span> <!-- Кнoпкa зaкрыть --> 
+                        <center>
+                            <h2 class="fixedprice">Order registration</h2>
+                        </center>
+                        <div class="windoworder">
+                            <div class="container">
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Where from:</span></div><div class="modal_address1 col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Where:</span></div><div class="modal_address2 col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Name:</span></div><div class="modal_name col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Phone Number:</span></div><div class="modal_tel col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Distance:</span></div><div class="modal_lenght col-md-6"> </div>
+                            </div>
+                            <div class="row ordend">
+                                <div class="col-md-2"><span style="float:left">Cost:</span></div><div class="modal_price col-md-6"> </div>
+                            </div>
+                            <br>
+                            <div class="row ordend">
+                                <div class="col-md-3 codesms">
+                                    <div class="input-group">
+                                    <span class="input-group-addon" id="smscode">Code from SMS</span>
+                                        <input id="msg" type="text" class="form-control"  name="msg" placeholder="Здесь код">
+                                    </div>
+                                </div>
+                                <div class="col-md-5">
+                                    <div class="col-md-7" id="center1"><button type="button" id="btnorder1" class="btn btn-success" ddd>End</button></div>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        
+                </div>
+                <div id="overlay"> </div><!-- Пoдлoжкa -->
+                <div class="col-md-7">
+                    <div class="input-group input-group-lg">
+                        <span class="input-group-addon inffortax" id="basic-addon1" ><span class="xxx">..</span>Where from<span class="xxx">..</span></span>
+                      <input  type="text" class="form-control ord" id="adress" placeholder="Street" aria-describedby="basic-addon1">
+                      <input  type="text" class="form-control ord" id="home" placeholder="House" aria-describedby="basic-addon1">
+                      <input  type="text" class="form-control ord" id="podezd" placeholder="Entrance" aria-describedby="basic-addon1">
+                      <input  type="text" class="form-control ord" id="kv" placeholder="Flat" aria-describedby="basic-addon1">
+                </div>
+                <br>
+                <div class="input-group input-group-lg">
+                      <span class="input-group-addon inffortax" id="basic-addon1" ><span style="float: right;">Contacts</span></span>
+                      <input type="text" class="form-control ord" id="name" placeholder="Name" aria-describedby="basic-addon1">
+                      <input type="text" pattern="/+375[0-9]{2} [0-9]{2} [0-9]{2} [0-9]{3}/" class="form-control ord" id="tel" placeholder="Phone Number" aria-describedby="basic-addon1">
+                </div>
+                <br>
+                <div class="input-group input-group-lg">
+                      <span class="input-group-addon inffortax" id="basic-addon1"><span class="xxx">....</span>Where<span class="xxx">....</span></span>
+                      <input type="text" class="form-control ord" id="address2" placeholder="Address" aria-describedby="basic-addon1">
+                </div>
+                </div>
+                
+                <div class="col-md-5">
+                    <script src="https://api-maps.yandex.ru/2.1/?lang=ru_RU" type="text/javascript">
+                    </script><div id="map" style="width: 500px; height: 370px;"><span id="modal_close1">Х</span><ul id="menumap">
+                        <li>Start Of The Route</li>
+                        <li>The End Of The Route</li>
+                    </ul></div>
+                </div>
+                <br>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-5">
+                            <ul id="typeofcar">
+                                <li class="type active">Automobile</li>
+                                <li class="type">Minivan</li>
+                                <li class="type">Estate</li>
+                                <!--<li class="type">An airport</li> -->
+                            </ul>
+                            <div class="typeofcarmob">
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        <div class="col-md-7" id="center"><button type="button" id="btnorder" class="btn btn-success" style="transform: scale(1.5);margin-top: 3%;">Accept</button></div>
+                </div>
+                </div>
+			</div>
+		</div>
+	</section>
+	<section class="main_content"> 
+
+                    <div class="col-md-12">
+                                                 
+                                <div class="info">
+									Advantages
+                                </div>
+                    </div>
+                          
+      
+		    <div class="goods">
+		        <div class="first container">
+                 
+		        <div class="row">
+		            <div class="col-lg-4"><i class="fa fa-credit-card inf" aria-hidden="true">Clearing settlement</i></div>
+		            <div class="col-lg-4"><i class="fa fa-car inf" aria-hidden="true">New comfortable cars</i></div>
+		            <div class="col-lg-4"><i class="fa fa-calculator inf" aria-hidden="true">Savings without the hassle</i></div>
+		        </div>
+		        <div class="row">
+		            <div class="col-lg-4"><i class="fa fa-wifi inf" aria-hidden="true">Free Wi-Fi</i></div>
+		            <div class="col-lg-4"><i class="fa fa-tag inf" aria-hidden="true">Check after each trip</i></div>
+		            <div class="col-lg-4"><i class="fa fa-smile-o inf" aria-hidden="true">Polite driver</i></div>
+		        </div>
+		        </div>
+		        <div class="second">
+		            <center>
+		                <div class="container">
+                 
+                        <div class="row">
+                            <div class="col-md-4"><i class="fa fa-credit-card inf2" aria-hidden="true">Clearing settlement</i></div>
+                            <div class="col-md-4"><i class="fa fa-car inf2" aria-hidden="true">New comfortable cars</i></div>
+                            <div class="col-md-4"><i class="fa fa-calculator inf2" aria-hidden="true">Savings without the hassle</i></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4"><i class="fa fa-wifi inf2" aria-hidden="true">Free Wi-Fi</i></div>
+                            <div class="col-md-4"><i class="fa fa-tag inf2" aria-hidden="true">Check after each trip</i></div>
+                            <div class="col-md-4"><i class="fa fa-smile-o inf2" aria-hidden="true">Polite driver</i></div>
+                        </div>
+		    
+		            </div>
+		            </center>
+		        </div>
+		    <div class="slyder">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-6">  
+		                   <center>
+		                        <img id="iphone" src="img/iphone_wh.svg" alt="">
+		                   </center>
+		                </div>
+		                <div class="col-md-6">
+		                           <center>
+		                               <img id="click" src="img/handicon_wh.svg" alt="">
+		                           
+		                    <h2 id="h2" style="color:#f2f2f2;">Download, use, tell your friends</h2>
+		                    </center>
+		                </div>
+		            </div>
+		        </div>
+		  </div>
+        </div>
+	</section>
+	<footer>
+	   <center>
+	        <img class="payment" src="img/visa.png" alt="">
+            <img class="payment" src="img/master-card.png" alt="">
+            <img class="payment" src="img/belcard.png" alt="">
+            <img class="payment"src="img/assist-by.png" alt="">
+	   </center>
+	</footer>
+	<script src="libs/jquery/jquery-1.11.1.min.js"></script>
+	<script src="libs/jquery-mousewheel/jquery.mousewheel.min.js"></script>
+	<script src="libs/fancybox/jquery.fancybox.pack.js"></script>
+	<script src="libs/waypoints/waypoints-1.6.2.min.js"></script>
+	<script src="libs/scrollto/jquery.scrollTo.min.js"></script>
+	<script src="libs/owl-carousel/owl.carousel.min.js"></script>
+	<script src="libs/countdown/jquery.plugin.js"></script>
+	<script src="libs/countdown/jquery.countdown.min.js"></script>
+	<script src="libs/countdown/jquery.countdown-ru.js"></script>
+	<script src="libs/landing-nav/navigation.js"></script>
+	<script src="js/common.js"></script>
+	<!-- Yandex.Metrika counter --><!-- Yandex.Metrika counter --><script type="text/javascript">(function (d, w, c) { (w[c] = w[c] || []).push(function() { try { w.yaCounter25346996 = new Ya.Metrika({id:25346996, webvisor:true, clickmap:true, trackLinks:true, accurateTrackBounce:true}); } catch(e) { } }); var n = d.getElementsByTagName("script")[0], s = d.createElement("script"), f = function () { n.parentNode.insertBefore(s, n); }; s.type = "text/javascript"; s.async = true; s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js"; if (w.opera == "[object Opera]") { d.addEventListener("DOMContentLoaded", f, false); } else { f(); } })(document, window, "yandex_metrika_callbacks");</script><noscript><div><img src="//mc.yandex.ru/watch/25346996" style="position:absolute; left:-9999px;" alt="" /></div></noscript><!-- /Yandex.Metrika counter --><!-- /Yandex.Metrika counter -->
+	<!-- Google Analytics counter --><!-- /Google Analytics counter -->
+	<script src="js/script.js"></script>
+</body>
+</html>
