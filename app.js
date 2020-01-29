@@ -84,10 +84,10 @@ app.get("/callback", function (req, res) {
             var status = jsonString.access_status;
 
             if (status === 'ALLOWED') {
-            	res.render('indexValid.html');
+            	res.render('indexValid.ejs');
                // res.render('post.ejs', {post: "You logged in successfully. License check pass, you can use application."});
             } else {
-                res.render('indexInvalid.html');
+                res.render('indexInvalid.ejs');
             }
 
         });
