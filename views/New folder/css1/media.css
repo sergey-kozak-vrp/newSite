@@ -1,0 +1,356 @@
+/*==========  Desktop First Method  ==========*/
+
+@media only screen and (max-width: 1500px) {
+    #symb1 {
+        display: none;
+    }
+}
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 1200px) {
+    .controlmach:hover {
+        transform: scale(1.5);
+    }    
+    .first {
+        display:none;
+    }
+    .second {
+        display: block;
+    }
+    
+  
+    .controlmach {
+        transform: scale(1.2);
+        margin: 5%;
+        margin-top: 10%;
+    }
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (max-width : 990px) {
+    .cont {
+        margin-left: 0;
+    }
+    
+    .priceinfo {
+        font-size: 40px;    
+    }
+    
+    .type1 {
+        text-align: center;
+        font-size: 50px;
+    }
+    
+    
+    .controlmach {
+        transform: scale(1);
+    }
+    
+    .controlmach:hover {
+        transform: scale(1);
+    } 
+
+    .fixedprice {
+        margin-top: 5%;
+        text-align: center;
+    }
+    .typec {
+        font-size: 60px;
+        text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.31);
+    }
+	.sell_right .button {
+		margin: 15px auto;
+		float: none;
+		max-width: 250px;
+	}
+	.sell_descr {
+		text-align: center;
+	}
+    
+
+    
+
+	.maian_mnu ul {
+		background-color: #385E82;
+		display: none;
+		position: absolute;
+		width: 100%;
+	}
+	.maian_mnu ul li {
+		display: block;
+    }
+    
+    .maian_mnu a:hover {
+	background-color: #F8A71A;
+    transform: scale(1.03);
+    transition: 0.25s all;
+	}
+    
+    .taxi {
+         font-size: 26.6666px;
+    }
+    #symb {
+        max-height: 200px;
+        max-width: 100px;
+        margin-right: 50px;
+        margin-top: 10px;
+    }
+    
+    #modal_form {
+        width: 600px;
+        height: 400px;
+        margin-top: -200px;
+        margin-left: -300px;
+    }
+    
+    #modal_form1 {
+        width: 600px;
+        height: 300px;
+        margin-top: -150px;
+        margin-left: -300px;
+    }
+    
+    .ordend {
+        margin-left: 10%;
+    }
+    
+    #center {
+        text-align: center;
+    }
+    
+    #center1 {
+        margin-left: 15%;
+        margin-top: 5%;
+    }
+    
+    #map {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    
+    .first {
+        display:none;
+    }
+    
+    .second {
+        display: block;
+    }
+    
+    .main_content {
+        background-image: url("../img/bg.jpg");
+    }
+    
+    #iphone {
+        transform: scale(0.9);
+        margin: auto;
+    }
+    
+    .container1 {
+        margin-left: 15%;
+    }
+    
+    #click {
+        transform: scale(0.6);
+        position: relative;
+        margin: 0;
+    }
+}
+
+/* Small Devices, Tablets */
+@media only screen and (max-width : 768px) {
+    
+    .codesms {
+        margin-left: 5%;
+        width: 100%;
+    }
+    
+    .taxi {
+         font-size: 26.666px;
+    }
+    
+    .priceinfo {
+        font-size: 35px;    
+    }
+    
+    #symb {
+        max-height: 200px;
+        max-width: 100px;
+        margin-right: 50px;
+        margin-top: 10px;
+    }
+    .codesms {
+        max-width: 70%;
+    }
+    #map {
+        display: none;
+        width: 0;
+        height: 0;
+    }
+    
+    #center1 {
+        margin-left: 20%;
+        margin-top: 10%;
+    }
+    
+    .payment {
+        transform: scale(0.7);
+    }
+    
+    #modal_form {
+        transform: scale(.8);
+    }
+    
+    #modal_form1 {
+        transform: scale(.8);
+    }
+    
+    .otz {
+        transform: scale(1);
+    }
+}
+
+@media only screen and (max-width : 520px) {
+    .priceinfo {
+        font-size: 33px;    
+    }
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (max-width : 480px) {
+    .top_contacts {
+        font-size: 10pt;
+    }
+    
+    .xxx {
+        transform: scale(0.8);
+    }
+   #modal_form {
+        transform: scale(.6);
+    }
+    
+    #modal_form1 {
+        transform: scale(.6);
+    }
+   
+    .otz {
+        transform: scale(1);
+    }
+    
+    .priceinfo {
+        font-size: 22px;    
+    }
+    
+    .controlmach {
+        transform: scale(.8);
+        margin: 1%;
+    }
+    
+    .infaboutfixedprice {
+        transform: scale(0.8);
+    }
+    #typeofcar {
+        display: none;
+        widows: 0;
+        height: 0;
+        
+    }
+    
+    .typec {
+        font-size: 35px;
+    }
+    #btnorder {
+     
+    }
+    .taxi {
+         font-size: 17.3333pt;
+    }
+    
+   
+    #symb {
+        max-height: 100px;
+        max-width: 50px;
+        margin-right: 25px;
+        margin-top: 5px;
+    }
+    #map {
+        display: none;
+    }
+    
+    .second {
+        transform: scale(0.7);
+    }
+    .payment {
+        display: inline;
+    }
+    
+    footer {
+        height: 1%;
+    }
+}
+
+/* Custom, iPhone Retina */
+@media only screen and (max-width : 320px) {
+     .top_contacts {
+        font-size: 5pt;
+    }
+    .taxi {
+         font-size: 13.3333pt;
+    }
+    #symb {
+        max-height: 80px;
+        max-width: 40px;
+        margin-right: 20px;
+        margin-top: 4px;
+    }
+    #map {
+        display: none;
+    }
+    
+    #iphone {
+        transform: scale(0.7);
+        margin: auto;
+    }
+    
+    .second {
+        transform: scale(0.55);
+    }
+    .payment {
+        display: inline;
+    }
+    
+    footer {
+        height: 0.85%;
+    }
+}
+
+
+/*==========  Mobile First Method  ==========*/
+
+/* Custom, iPhone Retina */
+@media only screen and (min-width : 320px) {
+
+}
+
+/* Extra Small Devices, Phones */
+@media only screen and (min-width : 480px) {
+    
+}
+
+/* Small Devices, Tablets */
+@media only screen and (min-width : 768px) {
+	.top_links {
+		display: inline-block !important;
+	}
+}
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+	.maian_mnu ul {
+		display: block !important;
+	}
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+
+}

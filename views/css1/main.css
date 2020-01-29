@@ -1,0 +1,726 @@
+*::-webkit-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*::-moz-placeholder {
+	color: #666;
+	opacity: 1;
+}
+*:-ms-input-placeholder {
+	color: #666;
+	opacity: 1;
+}
+
+
+
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid {
+	border:red 3px solid
+}
+body input:required:valid,
+body textarea:required:valid {
+	border: green 3px solid
+}
+body {
+	font-family: "RobotoRegular", sans-serif;
+	font-size: 16px;
+}
+
+.header_topline {
+	padding: 1% 0 ;
+    box-shadow: 10px solid black;
+    background: #385E82;
+}
+
+.taxi {
+    font-family: 'Gloria Hallelujah', cursive;
+    float: right;
+    font-size: 72px;
+    color: #f2f2f2;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.25);
+}
+
+#modal_form {
+	width: 700px; 
+    color: white;
+    font-weight: 600;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.69);
+	height: 300px; /* Рaзмеры дoлжны быть фиксирoвaны */
+	border-radius: 5px;
+	box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.79);
+	background: rgba(56, 94, 130, 0.52);
+	position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+	top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+	left: 50%; /* пoлoвинa экрaнa слевa */
+	margin-top: -150px;
+	margin-left: -350px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+	display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+	opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+	z-index: 10; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+	padding: 20px 10px;
+}
+
+
+
+
+#modal_form1 {
+	width: 700px; 
+    color: white;
+    font-weight: 600;
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.69);
+	height: 300px; /* Рaзмеры дoлжны быть фиксирoвaны */
+	border-radius: 5px;
+	box-shadow: 2px 2px 40px rgba(0, 0, 0, 0.79);
+	background: rgba(56, 94, 130, 0.52);
+	position: fixed; /* чтoбы oкнo былo в видимoй зoне в любoм месте */
+	top: 45%; /* oтступaем сверху 45%, oстaльные 5% пoдвинет скрипт */
+	left: 50%; /* пoлoвинa экрaнa слевa */
+	margin-top: -150px;
+	margin-left: -350px; /* тут вся мaгия центрoвки css, oтступaем влевo и вверх минус пoлoвину ширины и высoты сooтветственнo =) */
+	display: none; /* в oбычнoм сoстoянии oкнa не дoлжнo быть */
+	opacity: 0; /* пoлнoстью прoзрaчнo для aнимирoвaния */
+	z-index: 10; /* oкнo дoлжнo быть нaибoлее бoльшем слoе */
+	padding: 20px 10px;
+}
+/* Кнoпкa зaкрыть для тех ктo в тaнке) */
+#modal_form #modal_close {
+	width: 21px;
+	height: 21px;
+    color: white;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+}
+
+#modal_form1 #modal_close {
+	width: 21px;
+	height: 21px;
+    color: white;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	display: block;
+}
+
+#modal_close1 {
+    display: none;
+}
+#map #modal_close1 {
+	width: 21px;
+	height: 21px;
+    font-size: 50px;
+    color: white;
+	position: absolute;
+	top: 10px;
+	right: -70px;
+	cursor: pointer;
+    z-index: 11;
+}
+/* Пoдлoжкa */
+#overlay {
+	z-index:9; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+	position:fixed; /* всегдa перекрывaет весь сaйт */
+	background-color:#000; /* чернaя */
+	opacity:0.8; /* нo немнoгo прoзрaчнa */
+	-moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+	filter:alpha(opacity=80);
+	width:100%; 
+	height:100%; /* рaзмерoм вo весь экрaн */
+	top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+	left:0;
+	cursor:pointer;
+	display:none; /* в oбычнoм сoстoянии её нет) */
+}
+
+#overlay1 {
+	z-index:9; /* пoдлoжкa дoлжнa быть выше слoев элементoв сaйтa, нo ниже слoя мoдaльнoгo oкнa */
+	position:fixed; /* всегдa перекрывaет весь сaйт */
+	background-color:rgba(0, 0, 0, 0.47); /* чернaя */
+	opacity:0.8; /* нo немнoгo прoзрaчнa */
+	-moz-opacity:0.8; /* фикс прозрачности для старых браузеров */
+	filter:alpha(opacity=80);
+	width:100%; 
+	height:100%; /* рaзмерoм вo весь экрaн */
+	top:0; /* сверху и слевa 0, oбязaтельные свoйствa! */
+	left:0;
+	cursor:pointer;
+	display:none; /* в oбычнoм сoстoянии её нет) */
+}
+
+.gradient {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#385e82+16,f8a71a+100&1+0,1+37,0.83+94 */
+    background: -moz-linear-gradient(-45deg, rgba(56,94,130,1) 0%, rgba(56,94,130,1) 16%, rgba(104,112,104,1) 37%, rgba(234,162,33,0.83) 94%, rgba(248,167,26,0.83) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, rgba(56,94,130,1) 0%,rgba(56,94,130,1) 16%,rgba(104,112,104,1) 37%,rgba(234,162,33,0.83) 94%,rgba(248,167,26,0.83) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, rgba(56,94,130,1) 0%,rgba(56,94,130,1) 16%,rgba(104,112,104,1) 37%,rgba(234,162,33,0.83) 94%,rgba(248,167,26,0.83) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#385e82', endColorstr='#d4f8a71a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.header_topline a {
+	color: #f2f2f2;
+}
+.top_links {
+	display: inline-block;
+	vertical-align: middle;
+	z-index: 10;
+}
+
+.top_links a:hover {
+	text-decoration: none;
+}
+.soc_buttons {
+	float: right;
+}
+.soc_buttons > a {
+	font-size: 26px;
+	margin-left: 8px;
+}
+.auth_buttons,
+.main_mnu_button {
+	background-color: transparent;
+	border: medium none;
+	font-size: 26px;
+}
+.main_mnu_button {
+	color: #F2F2F3;
+	padding: 8px 15px 0;
+}
+.logo {
+	color: #F8A71A;
+	display: block;
+    opacity: 0;
+	font-family: "RobotoCondensedLight";
+	font-size: 42px;
+	padding: 30px 0;
+	text-align: center;
+}
+.top_header {
+	background-image: url("../img1/bg.jpg");
+    padding-bottom: 5%;
+}
+.maian_mnu {
+	background-color: rgba(56, 94, 130, 0.47);
+	color: #F2F2F3;
+	margin-bottom: 20px;
+}
+.maian_mnu a {
+	color: #F2F2F3;
+	padding: 15px;
+	display: block;
+    max-width: 300px;
+	-webkit-transition: all .25s;
+	-o-transition: all .25s;
+	transition: all .25s;
+}
+.maian_mnu a:hover {
+    text-decoration: none;
+	background-color: #F8A71A;
+    transform: scale(1.1);
+    transition: .25s all;
+}
+.maian_mnu ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	float: left;
+	text-transform: uppercase;
+}
+.top_contacts {
+	background-color: rgba(36, 69, 100, 0.65);
+	float: right;
+	font-size: 20pt;
+	line-height: 40pt;
+	padding: 0 10pt;
+}
+.maian_mnu ul li {
+	display: inline-block;
+}
+.maian_mnu ul {
+	z-index: 12;
+}
+h1 {
+	color: #F8A71A;
+	text-transform: uppercase;
+	text-align: center;
+	font-family: "RobotoCondensedLight";
+	padding: 16px 0;
+}
+.sider_container img {
+	max-width: 100%;
+}
+.sider_container {
+	position: relative;
+}
+.next_button, .prev_button {
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 10em;
+	color: #fff;
+	cursor: pointer;
+	font-size: 46px;
+	padding: 0 25px;
+	position: absolute;
+	top: 40%;
+	z-index: 10;
+}
+.next_button {
+	right: 20px;
+}
+.prev_button {
+	left: 20px;
+}
+section.order  {
+	background-color: #385E82;
+	padding: 25px 0;
+}
+.sell_descr {
+    text-align: center;
+    font-size: 22px;
+    color: #F8A71A;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.32);
+}
+.button {
+    background-color: #F8A71A;
+    border: medium none;
+    border-radius: 5px;
+    color: #fff;
+    display: block;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    outline: none;
+    box-shadow: 0 9px #999;
+}
+
+
+
+.sell_right .button {
+	float: right;
+}
+.hidden {
+	display: none;
+}
+.pop_form input[type="text"] {
+    display: block;
+    line-height: 24px;
+    margin: 0 auto 12px;
+    width: 90%;
+    border: #999 3px solid;
+}
+.pop_form .button {
+	margin: 20px auto 0;
+}
+.pop_form h3 {
+    margin: 10px auto 15px;
+    text-align: center;
+    font-weight: normal;
+    font-family: "RobotoCondensedBold";
+    text-transform: uppercase;
+}
+.blog_item img {
+	max-width: 100%;
+	margin-bottom: 20px;
+}
+.blog_item h3 {
+	text-transform: uppercase;
+	font-family: "RobotoCondensedRegular";
+	margin-bottom: 10px;
+}
+.blog_item p {
+	margin-top: 0;
+}
+.right_aside {
+	padding: 15px 20px;
+	border-radius: 5px;
+	background-color: #EEEEEE;
+	margin-top: 30px;
+}
+
+#symb {
+    max-height: 400px;
+    max-width: 200px;
+    margin-right: 100px;
+    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.44);
+}
+
+
+#symb1 {
+    position: absolute;
+    max-height: 400px;
+    max-width: 300px;
+    margin-top:15%;
+    margin-left: 23%;
+    z-index: 2;
+    opacity: 0.6;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.44);
+    border-radius: 20px;
+}
+
+body {
+    background-image: url("img1/bg.jpg");
+}
+
+#menumap {
+    position: fixed;
+    float: right;
+    z-index: 6;
+    display: none;
+}
+
+
+
+#menumap li {
+    z-index: 4;
+    list-style: none;
+    padding: 2%;
+    max-width: 40%;
+    box-shadow: 1px 1px 15px black;
+    opacity: .8;
+    background: #fff;
+    font-weight: 600;
+}
+
+#menumap li:hover {
+    opacity: 1;
+    box-shadow: 1px 1px 25px black;
+}
+
+
+.form-control {
+    padding: 2%;
+}
+
+#map {
+    position: relative;
+}
+
+.form-control:hover {
+    border-color: #385E82;
+}
+
+#basic-addon1 {
+    background-color: #F8A71A;
+    color: #fff;
+    border: none;
+}
+
+#basic-addon2 {
+    background-color: #F8A71A;
+    color: #fff;
+    border: none;
+}
+
+.ord {
+    opacity: 0.5;
+}
+
+.ord:hover {
+    opacity: 1;
+}
+
+.button:active {
+  background-color: #F8A71A;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.order {
+    min-height: 33.33%;
+}
+
+
+.mid_header {
+    height: 50%;
+}
+
+mid_header ul  li  a {
+    text-decoration: overline;
+}
+
+.info {
+    padding: 1% 0;
+    background: rgba(255, 255, 255, 0.85);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.67);
+    text-align: center;
+    font-size: 42px;
+}
+
+.main_content {
+    font-family: 'Oswald', sans-serif;
+    background-image: url("../img1/bg2.jpg");
+    margin: 0;
+    padding: 0;
+}
+
+.inf {
+    color: #F8A71A;
+    transform: scale(1.9);
+    margin: 7% 0;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.33);
+    opacity: 0;
+}
+
+
+
+.goods {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.slyder {
+    background: #385E82;
+}
+
+#iphone {
+    margin: 2% 0;
+    opacity: 0;
+}
+
+.payment {
+    transform: scale(0.4);
+}
+
+footer {
+    height: 2%;
+}
+
+#click {
+    margin-top: 30%;
+}
+
+.first {
+    display: block;
+}
+
+
+.second { 
+    
+    display: none;
+}
+
+.inf2 {
+    margin: 6% 0;
+    transform: scale(1.9);
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.33);
+    color: #F8A71A;
+}
+
+#btnorder {
+    background-color: #F8A71A;
+    border: none;
+}
+
+.row {
+    margin: 0;
+}
+
+
+#map {
+       max-width: 100%;
+}
+
+#typeofcar {
+    margin-top: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+
+    max-width: 100%;
+}
+#typeofcar li {
+    text-align: center;
+    list-style-type: none;
+    display: inline-block;
+    margin-right: 0.1%;
+    width: 20%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    background: #FFF;
+    border-radius: 10px 0 10px 0;
+    transition: all 1s;
+    z-index: 5;
+    position: relative;
+    opacity: 0.5;
+    cursor: pointer;
+    margin-top: 2.5%;
+}
+
+#typeofcar li:first-child {
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+    width: 25%;
+    background: #F8A71A;
+    border-radius: 0 0 10px 0;
+    border: 0 0 2px 0 solid red;
+    opacity: 1;
+    color: white;
+}
+
+.priceinfo {
+    text-align: center;
+    color: #F8A71A;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px black;
+    font-size: 22px;
+    max-width: 90%;
+}
+
+
+.typec {
+    font-weight: 600;
+    color: #fff;
+    font-size: 18px;
+}
+
+.type1 {
+    color: white;
+     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.57);
+}
+
+.controlmach {
+    margin-left: 15%;
+    margin-top: 5%;
+}
+
+.fixedprice {
+    color:   #F8A71A;
+    font-weight: 300;
+    text-shadow: 1px 1px 5px black;
+    font-size: 20px;
+}
+
+
+.mach {
+    background: #2f4c67;
+    border-radius: 10px;
+    padding: 10%;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.57);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.infaboutfixedprice {
+    background: #2f4c67;
+    color: white;
+    padding: 4%;
+    max-height: 10%;
+     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.57);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 10px;
+}
+
+
+
+.container1 {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    margin-left: 35%;
+}
+
+.forouro {
+	position: absolute;
+	display: block;
+    z-index: 10;
+}
+
+.cont {
+    margin-right: 19%;
+}
+#btnorder {
+   
+}
+
+.ordend {
+    margin: .5%;
+}
+
+
+#btnorder1 {
+    background-color: #F8A71A;
+    border: none;
+}
+
+.xxx {
+    opacity: 0;
+}
+
+.windoworder {
+    position: relative;
+    margin-left: 20%;
+}
+
+
+.codesms {
+    max-width: 50%;
+}
+
+.controlmach:hover {
+    transition: .25s all;
+    z-index: 60;
+    box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.19);
+    transform: scale(1.1);
+}
+
+#sybm{
+    transition: 3s all;
+}
+
+#symb:hover {
+    transition: 3s all;
+    transform: scale(1.2);
+    box-shadow: 1px 1px 40px rgba(0, 0, 0, 0.19);
+}
+#symb1:hover {
+    transition: .5s all;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+#lol {
+ border-radius: 7px;
+ padding: 20px;
+ opacity: 0.4;
+ margin-top: 20px;
+ }
+
+#lol:hover {
+ opacity: 1;
+}
+
+.nameotz {
+    background: #F8A71A;
+    margin-bottom: 5%;
+    color: #fff;
+    width: 10%;
+    font-weight: 500;
+    box-shadow: 1px 10px 20px rgba(0, 0, 0, 0.29);
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 2px;
+    z-index: 10;
+}
+
+.textotz {
+   
+    border-radius: 2%;
+    width: 100%;
+    margin-bottom: 2%;
+    color: #fff;
+    font-weight: 300;
+    text-shadow: 1px 1px 20px rgba(0, 0, 0, 0.57);
+    text-align: left;
+    word-wrap: break-word;
+}
+
+
+.otz{
+    background: rgba(0, 0, 0, 0.18);
+}
